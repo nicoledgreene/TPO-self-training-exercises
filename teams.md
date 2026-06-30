@@ -13,6 +13,7 @@ Owns authentication, session management, and user account data.
 - Login, logout, MFA, and password management
 - User registration and onboarding
 - Profile, account settings, and notification preferences
+- Admin and assessor account creation, management, and role assignment
 
 **Recommended Size:** 3–4 engineers
 
@@ -112,25 +113,6 @@ These contracts must be defined early to prevent blocking dependencies between t
 
 ---
 
-## Cross-Cutting: Quality, Infrastructure & Operations
-
-This initiative spans all five teams. Each team owns quality/ops work within their domains; work is coordinated centrally to avoid duplication and ensure consistent standards.
-
-**Ownership Model:**
-- **Identity & Access** → Auth infrastructure hardening, security audit (OWASP), compliance documentation
-- **Claims Core** → Database optimization & observability, audit logging, analytics infrastructure
-- **Intelligence & Workflow** → Fraud model testing/tuning, rules engine performance validation, workflow monitoring
-- **Comms & Content** → Notification delivery SLAs, WebSocket scale testing, messaging observability
-- **Payments** → PCI compliance audit, payment SLA monitoring, payment reconciliation infrastructure
-
-**Shared Responsibility (cross-team coordination):**
-- Testing frameworks and load testing (orchestrated together to validate end-to-end flows)
-- Observability platform (APM, logging, dashboards — shared infrastructure)
-- Incident response and on-call training (platform-wide procedures)
-- Production cutover and deployment automation
-
----
-
 ## Delivery Order
 
 Teams should be stood up and deliver in this sequence to respect foundational dependencies:
@@ -141,6 +123,4 @@ Phase 2:  Claims Core              ← unblocks Intelligence, Comms, Payments
 Phase 3:  Intelligence & Workflow  ← parallel with Comms & Content
           Comms & Content          ← parallel with Intelligence & Workflow
 Phase 4:  Payments                 ← depends on Intelligence & Workflow approval event
-
-Quality, Infrastructure & Operations runs in parallel with all phases across all teams.
 ```

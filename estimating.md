@@ -3,11 +3,11 @@
 ---
 
 ## Initiative 0: Login & Account Management
-Provide policyholders and adjusters with secure authentication and self-service account management capabilities.
+Provide policyholders, adjusters, and admins with secure authentication and self-service account management capabilities.
 
 > **Note:** Foundational dependency for all other initiatives — must be delivered first.
 
-**Estimate:** `[30 70%]` → Adjusted (90th %): ~48 story points
+**Estimate:** `[40 70%]` → Adjusted (90th %): ~64 story points
 
 ### Epics
 
@@ -22,6 +22,9 @@ Support password reset, change password, and multi-factor authentication (MFA).
 
 #### Epic 4: Account Settings and Profile Management
 Enable users to view and update personal information, notification preferences, and linked policies.
+
+#### Epic 5: Admin & Assessor Account Management
+Support creation, management, and role assignment for internal admin and assessor accounts with appropriate access controls.
 
 ---
 
@@ -132,41 +135,16 @@ Notify policyholders of payment status and confirm successful delivery.
 
 ---
 
-## Initiative 6: Quality, Infrastructure & Operations
-Cross-cutting work spanning all five teams to deliver infrastructure, testing frameworks, observability, security hardening, and production readiness. Distributed across teams but tracked centrally for visibility.
-
-> **Note:** Runs in parallel with all feature initiatives. Not on critical path but essential for delivery quality and system reliability.
-
-**Estimate:** `[150 65%]` → Adjusted (90th %): ~215 story points
-
-### Epics
-
-#### Epic 1: Infrastructure Spikes & Vendor Evaluation
-POCs and architecture decisions for fraud detection ML, WebSocket/real-time messaging, document storage, payment processors, rules engines, and database scaling strategies.
-
-#### Epic 2: Testing & QA Frameworks
-Unit test harnesses, integration test suites, end-to-end testing frameworks, load testing infrastructure (target 2x peak volume), chaos engineering for failover testing.
-
-#### Epic 3: Observability & Monitoring
-Distributed tracing (APM), centralized logging, custom metrics collection, alerting rules, performance dashboards, and SLA monitoring across all services.
-
-#### Epic 4: Security & Compliance Hardening
-OWASP top 10 audit, PCI compliance validation, regulatory documentation, incident response playbooks, security training, and penetration testing coordination.
-
-#### Epic 5: Production Readiness & On-Call
-Runbooks for all services, on-call training and escalation procedures, deployment automation, canary release procedures, rollback testing, and customer support playbooks.
-
 ---
 
 ## Summary
 
 | Initiative | Median SP | Confidence | Adjusted SP (90th %) |
 |---|---|---|---|
-| Login & Account Management | 30 | 70% | ~48 |
+| Login & Account Management | 40 | 70% | ~64 |
 | Digital Claims Submission | 40 | 70% | ~65 |
 | Claims Status & Notifications | 25 | 75% | ~38 |
 | Automated Claims Validation & Routing | 60 | 50% | ~120 |
 | Adjuster Workflow Management | 50 | 60% | ~90 |
 | Payment Processing Integration | 45 | 55% | ~85 |
-| Quality, Infrastructure & Operations | 150 | 65% | ~215 |
-| **Total** | **400** | | **~661** |
+| **Total** | **260** | | **~462** |
